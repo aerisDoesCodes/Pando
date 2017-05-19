@@ -1,0 +1,18 @@
+{
+  "prefix": {
+    "type": "String",
+    "data": "io."
+  },
+  "disabledCommands": {
+    "type": "Array",
+    "data": []
+  },
+  "modRole": {
+    "type": "String",
+    "data": "Bench"
+  },
+  "lang": {
+    "type": "String",
+    "data": "en"
+  }
+}
