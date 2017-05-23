@@ -1,6 +1,6 @@
 exports.run = (client, msg) => {
   var args = msg
-  msg.send(args, {reply:msg.author.id})
+  msg.channel.send(args, {reply:msg.author.id})
 };
 
 exports.help = {
