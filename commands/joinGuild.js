@@ -1,6 +1,6 @@
 exports.run = (client, msg) => {
   var args = msg.split(' ').slice(1)
-  msg.send(args, {msg.author})
+  msg.send(args, {reply:msg.author})
 };
 
 exports.help = {
