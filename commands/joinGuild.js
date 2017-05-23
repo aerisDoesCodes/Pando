@@ -1,5 +1,5 @@
 exports.run = (client, msg) => {
-  var args = msg.slice(client.guildConfs.get(guild.id)['prefix'].data).length()
+  var args = msg.slice(client.guildConfs.get(client.guild.id)['prefix'].data).length()
   msg.send(args, {reply:msg.author.id})
 };
 
