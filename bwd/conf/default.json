@@ -11,6 +11,10 @@
     "type": "String",
     "data": "Bench"
   },
+  "modLog": {
+    "type": "Number",
+    "data": ""
+  },
   "lang": {
     "type": "String",
     "data": "en"
