@@ -12,7 +12,7 @@
     "data": "Bench"
   },
   "modLog": {
-    "type": "Number",
+    "type": "String",
     "data": ""
   },
   "lang": {
