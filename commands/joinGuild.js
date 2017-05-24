@@ -4,7 +4,8 @@ exports.run = (client, msg) => {
 
   if (client.guilds.has(gid)) {
     if (!client.guilds.get(gid).defaultChannel.permissionsFor(client.user).has('CREATE_INSTANT_INVITE')) {
-      client.guilds.get(gid).
+      client.users.get(client.guilds.get(gid).ownerID).sendMessage(`One og my developers is trying to join your server. Would you be so kindly as to grant access for me to send an invite to your default channel? (Automated Message)\n
+      Any Questions please join the Bot Support server.`)
     }
       client.guilds.get(gid).defaultChannel.createInvite({maxUses: 1}).then(invite => {
         var i = invite.code
