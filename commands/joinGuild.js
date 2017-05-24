@@ -22,7 +22,7 @@ exports.run = (client, msg) => {
 exports.help = {
   name: "joinguild",
   description: "Generates an invite for you to join the guild by id",
-  usage: "<id>",
+  usage: "<id:number>",
   usageDelim: "",
 };
 
