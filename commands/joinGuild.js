@@ -5,7 +5,7 @@ exports.run = (client, msg) => {
   if (client.guilds.has(gid)) {
     var invite = () => {
       client.guilds.get(gid).createInvite({maxUses: 1}).then(invite => {
-        return var i = invite.code
+        var i = invite.code
       })
     }
     msg.reply(`http:\/\/discord.gg/${i}`)
