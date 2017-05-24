@@ -1,6 +1,13 @@
 exports.run = (client, msg) => {
-  var args = msg.content.split(" ")[1]
-  msg.channel.send(args, {reply:msg.author.id})
+  var gid = msg.content.split(" ")[1]
+  // msg.channel.send(args, {reply:msg.author.id})
+
+  if (client.guilds.has(gid)) {
+    msg.reply('Test')
+  } else {
+    msg.reply(`I am not in the guild\: \'${gid}\' Please try again.`)
+  }
+
 };
 
 exports.help = {
