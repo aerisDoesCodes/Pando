@@ -1,5 +1,5 @@
 exports.run = (client, msg) => {
-  var args = msg.split(" ")
+  var args = msg.content.split(" ")[1]
   msg.channel.send(args, {reply:msg.author.id})
 };
 
