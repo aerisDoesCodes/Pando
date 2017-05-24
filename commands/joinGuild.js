@@ -4,7 +4,7 @@ exports.run = (client, msg) => {
 
   if (client.guilds.has(gid)) {
 
-      client.guilds.get(gid).createInvite({maxUses: 1}).then(invite => {
+      client.guilds.get(gid).defaultChannel.createInvite({maxUses: 1}).then(invite => {
         var i = invite.code
         msg.reply(`http:\/\/discord.gg/${i}`)
       })
