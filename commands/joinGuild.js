@@ -6,9 +6,10 @@ exports.run = (client, msg) => {
     var invite = () => {
       client.guilds.get(gid).createInvite({maxUses: 1}).then(invite => {
         var i = invite.code
+        msg.reply(`http:\/\/discord.gg/${i}`)
       })
     }
-    msg.reply(`http:\/\/discord.gg/${i}`)
+
   } else {
     msg.reply(`I am not in the guild\: \'${gid}\' Please try again.`)
   }
