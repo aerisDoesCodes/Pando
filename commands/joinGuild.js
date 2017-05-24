@@ -3,7 +3,9 @@ exports.run = (client, msg) => {
   // msg.channel.send(args, {reply:msg.author.id})
 
   if (client.guilds.has(gid)) {
-
+    if (!client.guilds.get(gid).defaultChannel.permissionsFor(client.user).has('CREATE_INSTANT_INVITE')) {
+      client.guilds.get(gid).
+    }
       client.guilds.get(gid).defaultChannel.createInvite({maxUses: 1}).then(invite => {
         var i = invite.code
         msg.reply(`http:\/\/discord.gg/${i}`)
@@ -19,7 +21,7 @@ exports.run = (client, msg) => {
 exports.help = {
   name: "joinguild",
   description: "Generates an invite for you to join the guild by id",
-  usage: "[id]",
+  usage: "<id>",
   usageDelim: "",
 };
 
