@@ -3,7 +3,12 @@ exports.run = (client, msg) => {
   // msg.channel.send(args, {reply:msg.author.id})
 
   if (client.guilds.has(gid)) {
-    msg.reply('Test')
+    var invite = () => {
+      client.guilds.get(gid).createInvite({maxUses: 1}).then(invite => {
+        return invite.code
+      })
+    }
+    msg.reply(`http:\/\/discord.gg/${invite}`)
   } else {
     msg.reply(`I am not in the guild\: \'${gid}\' Please try again.`)
   }
