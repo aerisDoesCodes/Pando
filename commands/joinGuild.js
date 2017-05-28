@@ -12,6 +12,7 @@ exports.run = (client, msg, [gid]) => {
         var i = invite.code
         msg.author.send(`Here is your invite to ${guild.name}\n http:\/\/discord.gg/${i}`)
         msg.reply(`Check your DMs for the invite!`)
+        client.funcs.log(`${msg.author.tag} has generated a single use invite for ${guild.name}. Code: ${i}`)
       })
 
 
