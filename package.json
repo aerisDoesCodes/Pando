@@ -1,6 +1,6 @@
 {
   "name": "pando-bot-new",
-  "version": "1.0.0",
+  "version": "1.0.6",
   "description": "Pando the easy moderation bot.",
   "main": "app.js",
   "scripts": {
