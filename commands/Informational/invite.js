@@ -15,6 +15,7 @@ exports.help = {
   description: "Displays the join server link of the bot.",
   usage: "",
   usageDelim: "",
+  category: "Informational"
 };
 
 exports.conf = {

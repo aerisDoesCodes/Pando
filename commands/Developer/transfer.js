@@ -19,6 +19,7 @@ exports.help = {
   description: "Transfers a core piece to its respected folder",
   usage: "<command|function|inhibitor|event|monitor> <name:str>",
   usageDelim: " ",
+  category: "Developer"
 };
 
 function copy(client, msg, type, name) {

@@ -11,14 +11,14 @@ return result.then(output => {
   if (output.includes(client.token)) output = output.replace(client.token, 'Not for your eyes');
   if (output.length > 1990) console.log(output), output = 'Too long to be printed (content got console logged)';
 
-  return msg.channel.sendCode('js', output);
+  return msg.channel.send(output, {code:'js'});
 }).catch(err => {
   console.error(err);
   err = err.toString();
 
   if (err.includes(client.token)) err = err.replace(client.token, 'Not for your eyes');
 
-  return msg.channel.sendCode('js', err);
+  return msg.channel.send(err, {code:'js'});
 });
 };
 
@@ -36,4 +36,5 @@ exports.help = {
   description: "Evaluates arbitrary Javascript. Reserved for bot owner.",
   usage: "<expression:str>",
   usageDelim: "",
+  category: "Developer"
 };

@@ -256,4 +256,5 @@ exports.help = {
   description: "Downloads a piece, either from a link or our Pieces Repository, and installs it.",
   usage: "<commands|functions|monitors|inhibitors|providers|url:url> [location:str] [folder:str]",
   usageDelim: " ",
+  category: "Developer"
 };
