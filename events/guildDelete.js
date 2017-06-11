@@ -13,5 +13,6 @@ exports.run = (client, guild) => {
           embed: embed,
           disableEveryone: true
       }
+      console.log("Left a guild " + `${guild.name} \| ${guild.id} and the owner id is ${guild.owner.id}`)
   )
 }
