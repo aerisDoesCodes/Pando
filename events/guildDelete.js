@@ -8,8 +8,9 @@ exports.run = (client, guild) => {
       .setTimestamp()
       .addField("Owner Name", `${guild.owner.user.username}`, true)
       .addField("Owner ID", `${guild.owner.id}`, true)
-  client.guilds.get("280285147805384704").channels.get("280288162876751873").sendEmbed(
-      embed, {
+  client.guilds.get("280285147805384704").channels.get("280288162876751873").send(
+      '', {
+          embed: embed,
           disableEveryone: true
       }
   )
