@@ -1,11 +1,13 @@
-exports.run = (client, msg, [reason]) => {
+exports.run = (client, msg) => {
     var channel = client.channels.get('280288162876751873');
     var embed = new client.methods.Embed()
     var guild = msg.guild
+    var reason = msg.content.split(' ').slice(1).join(' ')
+    if (!reason) return msg.channel.send('I require a reason')
     client.forceLeave = true
 
 
-    embed.setAuthor('Guild Removed')
+    embed.setFooter('Guild Removed by ' + msg.author.tag)
         .addField("Guild Name", `${guild.name}`, true)
         .addField("Guild ID", `${guild.id}`, true)
         .setColor("#E71515")
@@ -17,17 +19,19 @@ exports.run = (client, msg, [reason]) => {
 
 
 
-        channel.send('', {
-          embed,
-          disableEveryone: true
+        channel.send('', {embed}).then(m => {
+          client.forceLeave = true
+          guild.leave()
+
         })
+        client.forceLeave = false
 
 };
 
 exports.help = {
   name: "leaveGuild",
   description: "Makes the bot leave a guild, Reason Required.",
-  usage: "<reason:str> [...]",
+  usage: "",
   usageDelim: "",
   category: "Developer"
 };
@@ -35,7 +39,7 @@ exports.help = {
 exports.conf = {
   enabled: true,
   runIn: ["text"],
-  aliases: [],
+  aliases: ["lg"],
   permLevel: 10,
   botPerms: [],
   requiredFuncs: [],
