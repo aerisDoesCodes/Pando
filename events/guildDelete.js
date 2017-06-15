@@ -1,4 +1,5 @@
 exports.run = (client, guild) => {
+  if (client.forceLeave) return
   var embed = new client.methods.Embed()
   var moment = require('moment')
   embed.setAuthor('Guild Removed')
