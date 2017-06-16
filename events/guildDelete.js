@@ -1,5 +1,5 @@
 exports.run = (client, guild) => {
-  if (client.forceLeave) return
+  if (guild.forceLeave) return
   var embed = new client.methods.Embed()
   var moment = require('moment')
   embed.setAuthor('Guild Removed')
@@ -16,5 +16,5 @@ exports.run = (client, guild) => {
       }
 
   )
-  console.log("Left a guild " + `${guild.name} \| ${guild.id} and the owner id is ${guild.owner.id}`)
+  client.funcs.log("Left a guild " + `${guild.name} \| ${guild.id} and the owner id is ${guild.owner.id}`)
 }

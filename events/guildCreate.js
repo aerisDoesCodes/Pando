@@ -24,6 +24,6 @@ exports.run = (client, guild) => {
       }
 
   );
-  console.log("Joined a guild " + `${guild.name} \| ${guild.id} and the owner id is ${guild.owner.id}`)
+  client.funcs.log("Joined a guild " + `${guild.name} \| ${guild.id} and the owner id is ${guild.owner.id}`)
   guild.defaultChannel.send('',{embed})
 };

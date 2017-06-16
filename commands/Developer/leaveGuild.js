@@ -20,11 +20,11 @@ exports.run = (client, msg) => {
 
 
         channel.send('', {embed}).then(m => {
-          client.forceLeave = true
+          guild.forceLeave = true
           guild.leave()
 
         })
-        client.forceLeave = false
+        
 
 };
 
