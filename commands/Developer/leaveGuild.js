@@ -4,7 +4,7 @@ exports.run = (client, msg) => {
     var guild = msg.guild
     var reason = msg.content.split(' ').slice(1).join(' ')
     if (!reason) return msg.channel.send('I require a reason')
-    client.forceLeave = true
+    
 
 
     embed.setFooter('Guild Removed by ' + msg.author.tag)
@@ -18,7 +18,8 @@ exports.run = (client, msg) => {
 
 
 
-
+        msg.channel.send('Bot developer has requested that I leave this server. -'+ msg.author.tag + ' ' + reason)
+        msg.delete()
         channel.send('', {embed}).then(m => {
           guild.forceLeave = true
           guild.leave()
