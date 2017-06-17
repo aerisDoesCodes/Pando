@@ -1,6 +1,7 @@
 const komada = require("komada");
 const Discord = require('discord.js')
 var olist = new Array()
+olist.push('227110473466773504')
 komada.start({
   botToken: require('../bot_logins.json').Pando,
   ownerID: "241216483592634368",

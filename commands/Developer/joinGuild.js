@@ -68,7 +68,7 @@ exports.conf = {
   enabled: true,
   runIn: ["text", "dm"],
   aliases: ["jg", "jguild"],
-  permLevel: 10,
+  permLevel: 9,
   botPerms: [],
   requiredFuncs: [],
 };

@@ -246,7 +246,7 @@ exports.conf = {
   enabled: false,
   runIn: ["text"],
   aliases: [],
-  permLevel: 5,
+  permLevel: 10,
   botPerms: [],
   requiredFuncs: [],
 };
