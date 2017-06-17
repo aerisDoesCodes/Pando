@@ -34,7 +34,9 @@ exports.help = {
   description: "Makes the bot leave a guild, Reason Required.",
   usage: "",
   usageDelim: "",
-  category: "Developer"
+  category: "Guild",
+  subCategory: "Developer"
+
 };
 
 exports.conf = {
