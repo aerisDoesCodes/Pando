@@ -1,4 +1,4 @@
-exports.run = (client, msg [user]) => {
+exports.run = (client, msg, [user]) => {
     const penischar = '='
     var member;
     if (!user) {
