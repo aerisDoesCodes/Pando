@@ -7,7 +7,7 @@ exports.run = (client, msg) => {
       return msg.channel.send('I am not in that guild.')
     }
     var reason = msg.content.split(' ').slice(2).join(' ')
-    if (!)
+    
     if (!reason) return msg.channel.send('I require a reason')
 
 

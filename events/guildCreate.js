@@ -30,16 +30,16 @@ exports.run = (client, guild) => {
 };
 
 function users(guild) {
-  var humans = 0
-  var bots = 0
+  var h = 0
+  var b = 0
 
 
   guild.members.forEach(m => {
     if (m.user.bot) {
-      bots = bots + 1
+      b = b + 1
     } else if (!m.user.bot) {
-      humans = humans + 1
+      h = h + 1
     }
-    return [humans, bots]
+    return [h, b]
   })
 }
