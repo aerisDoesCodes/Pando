@@ -17,6 +17,7 @@ exports.run = (client, guild) => {
       .setTimestamp()
       .addField("Owner Name", `${guild.owner.user.username}`, true)
       .addField("Owner ID", `${guild.owner.id}`, true)
+      .addField('Bots : Humans',`${users(guild)[0]} : ${users(guild)[1]}`,true)
   client.guilds.get("280285147805384704").channels.get("280288162876751873").send(
       '', {
           disableEveryone: true,
@@ -27,3 +28,18 @@ exports.run = (client, guild) => {
   client.funcs.log("Joined a guild " + `${guild.name} \| ${guild.id} and the owner id is ${guild.owner.id}`)
   guild.defaultChannel.send('',{embed})
 };
+
+function users(guild) {
+  var humans = 0
+  var bots = 0
+
+
+  guild.members.forEach(m => {
+    if (m.user.bot) {
+      bots = bots + 1
+    } else if (!m.user.bot) {
+      humans = humans + 1
+    }
+    return [humans, bots]
+  })
+}

@@ -1,10 +1,15 @@
 exports.run = (client, msg) => {
     var channel = client.channels.get('280288162876751873');
     var embed = new client.methods.Embed()
-    var guild = msg.guild
-    var reason = msg.content.split(' ').slice(1).join(' ')
+    if (client.guilds.has(msg.content.split(' ')[1])) {
+      var guild = client.guilds.get(msg.content.split(' ')[1])
+    } else {
+      return msg.channel.send('I am not in that guild.')
+    }
+    var reason = msg.content.split(' ').slice(2).join(' ')
+    if (!)
     if (!reason) return msg.channel.send('I require a reason')
-    
+
 
 
     embed.setFooter('Guild Removed by ' + msg.author.tag)
@@ -18,14 +23,14 @@ exports.run = (client, msg) => {
 
 
 
-        msg.channel.send('Bot developer has requested that I leave this server. -'+ msg.author.tag + ' ' + reason)
+        msg.channel.send('Bot developer has requested that I leave this server. \n'  + reason  + '\n-'+ msg.author.tag)
         msg.delete()
         channel.send('', {embed}).then(m => {
           guild.forceLeave = true
           guild.leave()
 
         })
-        
+
 
 };
 

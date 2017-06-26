@@ -29,17 +29,17 @@ exports.run = (client, msg) => {
       client.guilds.get(gid).defaultChannel.createInvite({maxUses: 1}).then(invite => {
         var inv = invite.code
 
-        var embed = new client.methods.Embed()
-        .setTitle(`${guild.name}`)
-        .addBlankField(true)
-        .addField('Invite',`http:\/\/discord.gg/${inv}`,true)
-        .setImage(invite.guild.iconURL)
-        .setColor(0x40CBE3)
+        // var embed = new client.methods.Embed()
+        // .setTitle(`${guild.name}`)
+        // .addBlankField(true)
+        // .addField('Invite',`http:\/\/discord.gg/${inv}`,true)
+        // .setImage(invite.guild.iconURL)
+        // .setColor(0x40CBE3)
 
 
 
 
-        msg.author.send('',{embed})
+        msg.author.send(`http:\/\/discord.gg/${inv}`)
         msg.reply(`Check your DMs for the invite!`)
         client.funcs.log(`${msg.author.tag} has generated a single use invite for ${guild.name}. Code: ${i}`)
       })
