@@ -36,5 +36,4 @@ exports.help = {
   description: "Evaluates arbitrary Javascript. Reserved for bot owner.",
   usage: "<expression:str>",
   usageDelim: "",
-  category: "Developer"
 };

@@ -1,5 +1,5 @@
 exports.run = (client, msg, [user]) => {
-    const penischar = '='
+    const penischar = '\='
     var member;
     if (!user) {
       member = msg.author
@@ -7,11 +7,12 @@ exports.run = (client, msg, [user]) => {
       member = user
     }
 
-    // msg.channel.send(penischar.repeat( + Math.floor(Math.random() * 10) * 2))
-    msg.channel.send(member.tag)
+    msg.channel.send(`${member.tag}\'s Penis Length\n` +
+    `8${penischar.repeat( + Math.floor(Math.random() * Math.random() * 10) * 2)}D`)
+    // msg.channel.send(member.tag)
  }
 
- exports.help = {
+ exports.conf = {
  enabled: true,
  runIn: ['text'],
  aliases: [],
@@ -20,10 +21,9 @@ exports.run = (client, msg, [user]) => {
  requiredFuncs: [],
  }
 
- exports.conf = {
+ exports.help = {
  name: "penis",
  description: "gets the penis length of a user via mention, or if no mention the sender",
  usage: "[user:mention]",
  usageDelim: "",
- category: "Fun"
  }

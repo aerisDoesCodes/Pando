@@ -42,6 +42,4 @@ exports.help = {
   description: "Define per-server configuration.",
   usage: "<set|get|reset|list> [key:str] [boolean:boolean|channel:channel|user:user|role:role|int:int|str:str]",
   usageDelim: " ",
-  category: "Guild Administration",
-  subcat: "Configuration"
 };

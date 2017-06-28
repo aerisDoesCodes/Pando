@@ -60,8 +60,6 @@ exports.help = {
   description: "Generates an invite for you to join the guild by id",
   usage: "",
   usageDelim: "",
-  category: "Guild",
-  subCategory: "Developer"
 };
 
 exports.conf = {

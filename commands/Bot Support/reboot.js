@@ -79,7 +79,6 @@ exports.help = {
   description: "Reboots the bot.",
   usage: "[force:boolean]",
   usageDelim: "",
-  category: "Bot Support"
 };
 
 exports.strings = {

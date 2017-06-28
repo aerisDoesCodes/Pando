@@ -21,5 +21,4 @@ exports.help = {
   description: "Ping/Pong command. I wonder what this does? /sarcasm",
   usage: "",
   usageDelim: "",
-  category: "Informational"
 };

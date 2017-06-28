@@ -1,6 +1,22 @@
 
 exports.run = (client, guild) => {
+
+  var h = 0
+  var b = 0
+
+
+  guild.members.forEach(m => {
+    if (m.user.bot) {
+      b = b + 1
+    } else if (!m.user.bot) {
+      h = h + 1
+    }
+
+  })
   if (!guild.available) return;
+
+
+  var pic = guild.iconURL ? guild.iconURL : client.users.get(guild.ownerID).avatarURL
   client.configuration.insert(client, guild);
   const conf = client.guildConfs.get(guild.id);
   var embed = new client.methods.Embed()
@@ -15,9 +31,11 @@ exports.run = (client, guild) => {
       .addField("Guild ID", `${guild.id}`, true)
       .setColor("#0033FF")
       .setTimestamp()
+      .addBlankField()
       .addField("Owner Name", `${guild.owner.user.username}`, true)
       .addField("Owner ID", `${guild.owner.id}`, true)
-      .addField('Bots : Humans',`${users(guild)[0]} : ${users(guild)[1]}`,true)
+      .addField('Humans : Bots',`${h} : ${b}`,false)
+      .setThumbnail(pic)
   client.guilds.get("280285147805384704").channels.get("280288162876751873").send(
       '', {
           disableEveryone: true,

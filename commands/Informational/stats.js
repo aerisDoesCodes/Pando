@@ -30,5 +30,4 @@ exports.help = {
   description: "Provides some details about the bot and stats.",
   usage: "",
   usageDelim: "",
-  category: "Informational"
 };

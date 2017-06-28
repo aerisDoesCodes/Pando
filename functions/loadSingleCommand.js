@@ -11,7 +11,7 @@ module.exports = (client, command, reload = false, loadPath = null) => new Promi
     }
     try {
       cmd = client.commands.get(command);
-      console.log(cmd.help.name);
+      // console.log(cmd.help.name);
       category = cmd.help.category;
       subCategory = cmd.help.subCategory;
       loadPath = cmd.help.filePath;
@@ -20,7 +20,7 @@ module.exports = (client, command, reload = false, loadPath = null) => new Promi
       });
       delete require.cache[require.resolve(loadPath)];
       cmd = require(loadPath);
-      console.log(cmd.help.name);
+      // console.log(cmd.help.name);
       if (cmd.init) {
         cmd.init(client);
       }
@@ -30,7 +30,7 @@ module.exports = (client, command, reload = false, loadPath = null) => new Promi
   } else {
     try {
       cmd = require(loadPath);
-      console.log(cmd.help.name);
+      // console.log(cmd.help.name);
       if (client.commands.has(cmd.help.name)) return resolve(delete require.cache[require.resolve(loadPath)]);
       if (cmd.conf.selfbot && !client.config.selfbot) {
         return reject(`The command \`${cmd.help.name}\` is only usable in selfbots!`);

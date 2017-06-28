@@ -66,5 +66,4 @@ exports.help = {
   description: "Display help for a command.",
   usage: "[command:str]",
   usageDelim: "",
-  category: "Informational"
 };

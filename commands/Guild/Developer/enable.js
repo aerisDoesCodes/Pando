@@ -37,5 +37,4 @@ exports.help = {
   description: "Re-enables or temporarily enables a Inhibitor/Command/Monitor. Default state restored on reboot.",
   usage: "<inhibitor|monitor|command> <name:str>",
   usageDelim: " ",
-  category: "Developer"
 };
