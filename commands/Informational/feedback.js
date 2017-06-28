@@ -1,5 +1,6 @@
-exports.run = async (client, msg, [feedback]) => {
+exports.run = async (client, msg) => {
     var channel = client.channels.get('329550112785301504');
+    var feedback = msg.content.split(' ').slice(1).join(' ')
     var tag = msg.author.tag;
     if (msg.author.respond) return msg.channel.send('You have already sent feedback recently. Please wait a while.')
 
@@ -30,11 +31,11 @@ exports.run = async (client, msg, [feedback]) => {
  exports.help = {
  name: "feedback",
  description: "Sends feedback to the developers",
- usage: "<feedback:str> [...]",
+ usage: "",
  usageDelim: "",
  category: ""
  }
 
  exports.init = (client) => {
-   
+
  }
