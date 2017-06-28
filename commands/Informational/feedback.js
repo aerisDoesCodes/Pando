@@ -34,3 +34,7 @@ exports.run = async (client, msg, [feedback]) => {
  usageDelim: "",
  category: ""
  }
+
+ exports.init = (client) => {
+   
+ }
