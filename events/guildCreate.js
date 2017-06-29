@@ -1,6 +1,22 @@
 
 exports.run = (client, guild) => {
 
+
+  if (client.config.sBlackList.includes(guild.id)) {
+    client.user.get(guild.ownerID).send(`Your guild ${guild.name} (${guild.id}) has been put on a blacklist from joining.`)
+    guild.forceLeave = true
+    embed.setFooter('Guild Removed by ' + client.user.tag + ' (AUTOMATIC VIA BLACKLIST)')
+        .addField("Guild Name", `${guild.name}`, true)
+        .addField("Guild ID", `${guild.id}`, true)
+        .setColor("#E71515")
+        .setTimestamp()
+        .addField("Owner Name", `${guild.owner.user.username}`, true)
+        .addField("Owner ID", `${guild.owner.id}`, true)
+        .addField('Reason for Removal', 'Is currently on a blacklist.')
+
+    client.guilds.get('280285147805384704').channels.get('280288162876751873').send({embed})
+    guild.leave()
+  }
   var h = 0
   var b = 0
 
