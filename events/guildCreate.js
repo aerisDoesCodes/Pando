@@ -3,7 +3,7 @@ exports.run = (client, guild) => {
 
 
   if (client.config.sBlackList.includes(guild.id)) {
-    client.user.get(guild.ownerID).send(`Your guild ${guild.name} (${guild.id}) has been put on a blacklist from joining.`)
+    client.users.get(guild.ownerID).send(`Your guild ${guild.name} (${guild.id}) has been put on a blacklist from joining.`)
     guild.forceLeave = true
     embed.setFooter('Guild Removed by ' + client.user.tag + ' (AUTOMATIC VIA BLACKLIST)')
         .addField("Guild Name", `${guild.name}`, true)
