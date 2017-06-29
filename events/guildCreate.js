@@ -16,7 +16,7 @@ exports.run = (client, guild) => {
         .addField('Reason for Removal', 'Is currently on a blacklist.')
 
     client.guilds.get('280285147805384704').channels.get('280288162876751873').send({embed})
-    guild.leave()
+    return guild.leave()
   }
   var h = 0
   var b = 0
