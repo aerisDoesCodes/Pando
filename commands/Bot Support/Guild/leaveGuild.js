@@ -13,7 +13,7 @@ exports.run = (client, msg) => {
     if (!reason) return msg.channel.send('I require a reason')
 
 
-
+var pic = guild.iconURL ? guild.iconURL : client.users.get(guild.ownerID).avatarURL
 
     embed.setFooter('Guild Removed by ' + msg.author.tag)
         .addField("Guild Name", `${guild.name}`, true)
@@ -23,6 +23,7 @@ exports.run = (client, msg) => {
         .addField("Owner Name", `${guild.owner.user.username}`, true)
         .addField("Owner ID", `${guild.owner.id}`, true)
         .addField('Reason for Removal', reason)
+        .setThumbnail(pic)
 
 
 
