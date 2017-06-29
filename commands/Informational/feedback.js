@@ -4,7 +4,7 @@ exports.run = async (client, msg) => {
     var tag = msg.author.tag;
     if (msg.author.respond) return msg.channel.send('You have already sent feedback recently. Please wait a while.')
 
-    var embed = client.methods.Embed()
+    var embed = new client.methods.Embed()
     .setTitle(tag + ' suggested:')
     .setDescription(feedback)
 
