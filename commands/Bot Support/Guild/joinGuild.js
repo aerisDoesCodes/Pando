@@ -41,7 +41,7 @@ exports.run = (client, msg) => {
 
         msg.author.send(`http:\/\/discord.gg/${inv}`)
         msg.reply(`Check your DMs for the invite!`)
-        client.funcs.log(`${msg.author.tag} has generated a single use invite for ${guild.name}. Code: ${i}`)
+        client.funcs.log(`${msg.author.tag} has generated a single use invite for ${guild.name}. Code: ${inv}`)
       })
 
 

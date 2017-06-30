@@ -3,7 +3,7 @@ exports.run = async (client, msg) => {
     var feedback = msg.content.split(' ').slice(1).join(' ')
     var tag = msg.author.tag;
     var time = msg.createdTimestamp
-    if (msg.author.respond) return msg.channel.send('You have already sent feedback recently. Please wait a while.' + `${msg.author.RespTime - time}`)
+    if (msg.author.respond) return msg.channel.send('You have already sent feedback recently. Please wait a while.'/* + `${msg.author.RespTime - time}*/`)
     if (!feedback) return msg.channel.send(`I need some stuff to say you know..`)
     var embed = new client.methods.Embed()
     .setTitle(tag + ' suggested:')

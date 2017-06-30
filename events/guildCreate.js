@@ -18,6 +18,8 @@ exports.run = (client, guild) => {
     client.guilds.get('280285147805384704').channels.get('280288162876751873').send({embed})
     return guild.leave()
   }
+
+  
   var h = 0
   var b = 0
 
