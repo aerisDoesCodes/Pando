@@ -19,7 +19,7 @@ exports.run = (client, guild) => {
     return guild.leave()
   }
 
-  
+
   var h = 0
   var b = 0
 
@@ -40,7 +40,8 @@ exports.run = (client, guild) => {
   const conf = client.guildConfs.get(guild.id);
   var embed = new client.methods.Embed()
   .addField('Thank you.', `Thank you for choosing Pando from:\n${client.users.get(client.config.ownerID).username} and ${client.users.get(client.config.ownerIDo).username}`)
-  .addField('Permissions Reminder', `Remember to set your Mod Role in the Config.\nUse ${conf['prefix'].data}conf set modRole`)
+  .addField('Permissions Reminder', `Remember to set your Mod Role in the Config.\nUse ${conf['prefix'].data}conf set modRole <name>`)
+  .addField('MODLOG Reminder', `Please remember to set your modlog in the config.\n Use ${conf['prefix'].data}conf set modlog <name>`)
   .addField('In need of support?', `[Click Here](http://discord.gg/dfdvArY) to join our discord.`)
 
   var embedc = new client.methods.Embed()
@@ -65,18 +66,3 @@ exports.run = (client, guild) => {
   client.funcs.log("Joined a guild " + `${guild.name} \| ${guild.id} and the owner id is ${guild.owner.id}`)
   guild.defaultChannel.send('',{embed})
 };
-
-function users(guild) {
-  var h = 0
-  var b = 0
-
-
-  guild.members.forEach(m => {
-    if (m.user.bot) {
-      b = b + 1
-    } else if (!m.user.bot) {
-      h = h + 1
-    }
-    return [h, b]
-  })
-}

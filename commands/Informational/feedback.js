@@ -6,8 +6,10 @@ exports.run = async (client, msg) => {
     if (msg.author.respond) return msg.channel.send('You have already sent feedback recently. Please wait a while.'/* + `${msg.author.RespTime - time}`*/)
     if (!feedback) return msg.channel.send(`I need some stuff to say you know..`)
     var embed = new client.methods.Embed()
-    .setTitle(tag + ' suggested:')
+    .setTitle(tag + ' sent feedback:')
     .setDescription(feedback)
+    .setTimestamp()
+    .setFooter(`from ${msg.guild.name} | \#${msg.channel.name} `)
 
 
 
@@ -36,8 +38,4 @@ exports.run = async (client, msg) => {
  usage: "",
  usageDelim: "",
  category: ""
- }
-
- exports.init = (client) => {
-
  }

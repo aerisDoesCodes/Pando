@@ -1,8 +1,26 @@
 const util = require("util").inspect;
+const forin = require('for-in');
 
 exports.run = (client, msg, [action, key, ...value]) => {
   if (action === "list") {
-    msg.channel.sendCode("json", util(msg.guildConf));
+    var keys = []
+    var values = []
+
+    forin(msg.guildConf, (v, k, o) => {
+      if (k === 'disabledCommands' && msg.guildConf.disabledCommands.length === 0) {
+          values.push('No Disabled Commands!')
+      } else {
+
+      values.push(v)
+    }
+      keys.push(k)
+      console.log(k + ' : ' + v)
+    })
+    var embed = new client.methods.Embed().setTitle('Guild Configuration').setColor(client.funcs.hex()).setDescription('Testing')
+    for(var i = 0;i<keys.length;i++){
+
+    }
+    msg.channel.send({embed})
   } else
 
   if (action === "get") {

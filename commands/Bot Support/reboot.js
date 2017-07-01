@@ -29,33 +29,33 @@ exports.run = (client, msg, [force]) => {
     }, ms('5s'))
   } else  {
     msg.channel.send('', {embed: requestR})
-  const collector = msg.channel.createMessageCollector(m => m.author.id === msg.author.id,{time: 15000})
-  collector.on('collect', m => {
+    const collector = msg.channel.createMessageCollector(m => m.author.id === msg.author.id,{time: 15000})
+    collector.on('collect', m => {
       var mr = m.content.replace('io.r', '')
       if (mr.toUpperCase() === 'YES') {
         return collector.stop("SUCCESS")
       } else if (mr.toUpperCase() === "NO") {
         return collector.stop("ABORTED")
       }
-      })
+    })
 
 
 
 
 
-  collector.on('end', (c,r) => {
-    if (r === "SUCCESS") {
-      msg.channel.send('', { embed: cSuccess})
-      setTimeout(() => {
-        process.exit()
-      }, ms('5s'))
-    } else if (r === "ABORTED") {
-      return msg.channel.send('', { embed: cAbort})
-    } else {
-      return msg.channel.send('', { embed: cTime})
-    }
-  })
-}
+    collector.on('end', (c,r) => {
+      if (r === "SUCCESS") {
+        msg.channel.send('', { embed: cSuccess})
+        setTimeout(() => {
+          process.exit()
+        }, ms('5s'))
+      } else if (r === "ABORTED") {
+        return msg.channel.send('', { embed: cAbort})
+      } else {
+        return msg.channel.send('', { embed: cTime})
+      }
+    })
+  }
 
 
 
