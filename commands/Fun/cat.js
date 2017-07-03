@@ -2,7 +2,7 @@ exports.run = async (client, msg) => {
   const {get} = require("snekfetch");
   get("https://random.cat/meow").then(response => {
     msg.channel.send(response.body.file)
-});
+  });
 }
 
 exports.conf = {

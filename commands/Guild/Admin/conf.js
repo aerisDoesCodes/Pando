@@ -8,11 +8,11 @@ exports.run = (client, msg, [action, key, ...value]) => {
 
     forin(msg.guildConf, (v, k, o) => {
       if (k === 'disabledCommands' && msg.guildConf.disabledCommands.length === 0) {
-          values.push('No Disabled Commands!')
+        values.push('No Disabled Commands!')
       } else {
 
-      values.push(v)
-    }
+        values.push(v)
+      }
       keys.push(k)
       console.log(k + ' : ' + v)
     })

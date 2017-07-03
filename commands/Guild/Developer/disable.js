@@ -19,7 +19,7 @@ exports.run = (client, msg, [type, name]) => {
       return msg.channel.sendCode("diff", `+ Successfully disabled command: ${name}`);
     }
     default:
-      return msg.channel.sendMessage("This will never happen");
+    return msg.channel.sendMessage("This will never happen");
   }
 };
 

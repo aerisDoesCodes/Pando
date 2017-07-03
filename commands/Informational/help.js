@@ -22,26 +22,26 @@ const buildHelp = (client, msg) => new Promise((resolve) => {
 exports.run = (client, msg, [cmd]) => {
   if (!cmd) {
     buildHelp(client, msg)
-      .then((help) => {
-        const helpMessage = [];
-        for (const key in help) {
-          helpMessage.push(`**${key} Commands**: \`\`\`asciidoc`);
-          for (const key2 in help[key]) {
-            helpMessage.push(`= ${key2} =`);
-            helpMessage.push(`${help[key][key2].join("\n")}\n`);
-          }
-          helpMessage.push("```\n\u200b");
+    .then((help) => {
+      const helpMessage = [];
+      for (const key in help) {
+        helpMessage.push(`**${key} Commands**: \`\`\`asciidoc`);
+        for (const key2 in help[key]) {
+          helpMessage.push(`= ${key2} =`);
+          helpMessage.push(`${help[key][key2].join("\n")}\n`);
         }
-        if (!client.config.selfbot) {
-          msg.author.sendMessage(helpMessage, { split: { char: "\u200b" } }).catch(e => client.funcs.log(e, "error"));
-          if (msg.channel.type.toLowerCase() !== "dm") {
-            msg.reply("Commands have been sent to your DMs.");
-          }
-        } else {
-          msg.channel.sendMessage(helpMessage, { split: { char: "\u200b" } })
+        helpMessage.push("```\n\u200b");
+      }
+      if (!client.config.selfbot) {
+        msg.author.sendMessage(helpMessage, { split: { char: "\u200b" } }).catch(e => client.funcs.log(e, "error"));
+        if (msg.channel.type.toLowerCase() !== "dm") {
+          msg.reply("Commands have been sent to your DMs.");
+        }
+      } else {
+        msg.channel.sendMessage(helpMessage, { split: { char: "\u200b" } })
         .catch(e => client.funcs.log(e, "error"));
-        }
-      });
+      }
+    });
   } else if (client.commands.has(cmd)) {
     cmd = client.commands.get(cmd);
     if (!client.config.selfbot) {

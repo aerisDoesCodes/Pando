@@ -3,21 +3,21 @@ exports.run = (client, msg) => {
 
 
   var regex = new RegExp("\d")
-   var errnum = new client.methods.Embed()
-   .addField('Sorry', 'Argument can only be 18 Numbers')
-   .setColor(0xb20000)
+  var errnum = new client.methods.Embed()
+  .addField('Sorry', 'Argument can only be 18 Numbers')
+  .setColor(0xb20000)
 
 
 
-   var errem = new client.methods.Embed()
-   .addField('Sorry', 'I require a guild id to operate.')
-   .setColor(0xb20000)
-
+  var errem = new client.methods.Embed()
+  .addField('Sorry', 'I require a guild id to operate.')
+  .setColor(0xb20000)
+  
   var gid = msg.content.split(" ")[1]
   if (!gid) return msg.channel.send('', { embed: errem})
   if (!gid.match(/^\d{18}/g)) return msg.channel.send('', {embed: errnum})
   // msg.channel.send(args, {reply:msg.author.id})
-// msg.reply(gid)
+  // msg.reply(gid)
   if (client.guilds.has(gid)) {
     var guild = client.guilds.get(gid);
     // var guild = client.guilds.get(gid)
@@ -26,23 +26,23 @@ exports.run = (client, msg) => {
       Any Questions please join the Bot Support server.`)
       msg.reply("I do not have permissions to do that..... Sorry.")
     }
-      client.guilds.get(gid).defaultChannel.createInvite({maxUses: 1}).then(invite => {
-        var inv = invite.code
+    client.guilds.get(gid).defaultChannel.createInvite({maxUses: 1}).then(invite => {
+      var inv = invite.code
 
-        // var embed = new client.methods.Embed()
-        // .setTitle(`${guild.name}`)
-        // .addBlankField(true)
-        // .addField('Invite',`http:\/\/discord.gg/${inv}`,true)
-        // .setImage(invite.guild.iconURL)
-        // .setColor(0x40CBE3)
-
-
+      // var embed = new client.methods.Embed()
+      // .setTitle(`${guild.name}`)
+      // .addBlankField(true)
+      // .addField('Invite',`http:\/\/discord.gg/${inv}`,true)
+      // .setImage(invite.guild.iconURL)
+      // .setColor(0x40CBE3)
 
 
-        msg.author.send(`http:\/\/discord.gg/${inv}`)
-        msg.reply(`Check your DMs for the invite!`)
-        client.funcs.log(`${msg.author.tag} has generated a single use invite for ${guild.name}. Code: ${inv}`)
-      })
+
+
+      msg.author.send(`http:\/\/discord.gg/${inv}`)
+      msg.reply(`Check your DMs for the invite!`)
+      client.funcs.log(`${msg.author.tag} has generated a single use invite for ${guild.name}. Code: ${inv}`)
+    })
 
 
   } else if (!client.guilds.has(gid)) {
