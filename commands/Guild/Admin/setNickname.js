@@ -55,7 +55,7 @@ exports.conf = {
   enabled: true,
   runIn: ['text', 'dm'],
   aliases: ['sn', 'cn', 'setNickname'],
-  permLevel: 10, // I don't know the perm level on this, I might check the perms later.
+  permLevel: 2, // This perm should be with Bench role or a server Owner (Optional `Bench and Owner`). I prefer with Bench role
   botPerms: [],
   requiredFuncs: [],
 }
