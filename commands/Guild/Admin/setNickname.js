@@ -55,7 +55,7 @@ exports.conf = {
   enabled: true,
   runIn: ['text', 'dm'],
   aliases: ['sn', 'cn', 'setNickname'],
-  permLevel: 3, // I don't know the perm level on this, I might check the perms later.
+  permLevel: 10, // I don't know the perm level on this, I might check the perms later.
   botPerms: [],
   requiredFuncs: [],
 }
@@ -63,7 +63,7 @@ exports.conf = {
 exports.help = {
   name: "setNickname",
   description: "Changes the bots nickname",
-  usage: "<nickname:args> [force:boolean]", // Check this out also (Leave some comments here so I know what to do next time)
+  usage: "<nickname:str> [force:boolean]", // Check this out also (Leave some comments here so I know what to do next time)
   usageDelim: " ",
   category: ""
 }
