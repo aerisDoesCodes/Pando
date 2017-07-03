@@ -2,7 +2,7 @@
 
 # Pando - A simple Discord Bot
 #### *admin, fun commands and much more!*
-[<img src="https://img.shields.io/badge/discord-js-green.svg">](http://github.com/JohnDoesCodes) [<img src="https://discordapp.com/api/guilds/133049272517001216/widget.png?style=shield">](https://discord.gg/dfdvArY)
+[<img src="https://img.shields.io/badge/discord-js-green.svg">](http://github.com/JohnDoesCodes) [<img src="https://discordapp.com/api/guilds/280285147805384704/widget.png?style=shield">](https://discord.gg/dfdvArY)
 
 # Join the community!
 
