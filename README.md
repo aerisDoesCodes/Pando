@@ -8,6 +8,7 @@
 
 Aeris, Chris, Terry is in continuous development, and it’s supported by an active community which produces new content for everyone to enjoy. New features are constantly added. Stay tuned by [joining the official server](https://discord.gg/dfdvArY)!
 
+Undergoing Constant Development.
 # License
 
 Released under the [GNU GPL v3](LICENSE).
