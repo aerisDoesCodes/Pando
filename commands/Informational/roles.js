@@ -7,23 +7,23 @@ exports.run = async (client, msg, args) => {
     if (!args) return msg.channel.send("Please specify an argument.\n`color` or `words`.")
     case "color":
     if (!msg.guild.member(client.user).hasPermission("EMBED_LINKS")) {
-            return msg.channel.send("`ERROR:` I do not have permission to send Embed.");
-        }
-        embed.setAuthor(`${msg.guild.name} guild roles`)
-        .setDescription(roles)
-        .setColor("#53A6F3")
-        .setFooter(`There are ${msg.guild.roles.filter(r => r.name).size} roles in ${msg.guild.name}`)
-        msg.channel.send('', {embed}).catch((err) => {msg.channel.send(`:warning: **An error occurred.**\n${err}`); console.log(err)});
-        break;
-        case "words":
-        if (!msg.guild.member(client.user).hasPermission("EMBED_LINKS")) {
-                return msg.channel.send("`ERROR:` I do not have permission to send Embed, contact administrator to get perm to send embed.");
-            }
-            embed.setAuthor(`${msg.guild.name} guild roles`)
-            .setDescription(roles1)
-            .setColor("#53A6F3")
-            .setFooter(`There are ${msg.guild.roles.filter(r => r.name).size} roles in ${msg.guild.name}`)
-            msg.channel.send('', {embed}).catch((err) => {msg.channel.send(`:warning: **An error occurred.**\n${err}`); console.log(err)});
+      return msg.channel.send("`ERROR:` I do not have permission to send Embed.");
+    }
+    embed.setAuthor(`${msg.guild.name} guild roles`)
+    .setDescription(roles)
+    .setColor("#53A6F3")
+    .setFooter(`There are ${msg.guild.roles.filter(r => r.name).size} roles in ${msg.guild.name}`)
+    msg.channel.send('', {embed}).catch((err) => {msg.channel.send(`:warning: **An error occurred.**\n${err}`); console.log(err)});
+    break;
+    case "words":
+    if (!msg.guild.member(client.user).hasPermission("EMBED_LINKS")) {
+      return msg.channel.send("`ERROR:` I do not have permission to send Embed, contact administrator to get perm to send embed.");
+    }
+    embed.setAuthor(`${msg.guild.name} guild roles`)
+    .setDescription(roles1)
+    .setColor("#53A6F3")
+    .setFooter(`There are ${msg.guild.roles.filter(r => r.name).size} roles in ${msg.guild.name}`)
+    msg.channel.send('', {embed}).catch((err) => {msg.channel.send(`:warning: **An error occurred.**\n${err}`); console.log(err)});
   }
   break;
 
