@@ -8,7 +8,6 @@ exports.run = (client, msg) => {
   • Name           :: ${msg.author.username}
   • Discrim        :: #${msg.author.discriminator}
   • ID             :: ${msg.author.id}
-  • Joined at      :: ${moment(msg.author.joinedAt).format('ddd MMM Do YYYY')}
   • Status         :: ${msg.author.presence.status}
   • Game           :: ${msg.author.presence.game === null ? "No Game" : msg.author.presence.game.name}
   • Joined Discord :: ${moment(msg.author.createdAt).format('ddd MMM Do YYYY')}

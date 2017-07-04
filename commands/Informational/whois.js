@@ -12,7 +12,6 @@ exports.run = (client, msg, [user]) => {
   • Name           :: ${mention.username}
   • Discrim        :: #${mention.discriminator}
   • User ID        :: ${mention.id}
-  • Joined at      :: ${moment(mention.joinedAt).format('ddd MMM Do YYYY')}
   • Status         :: ${mention.presence.status}
   • Game           :: ${mention.presence.game === null ? "No Game" : mention.presence.game.name}
   • Joined Discord :: ${moment(mention.createdAt).format('ddd MMM Do YYYY')}`);
