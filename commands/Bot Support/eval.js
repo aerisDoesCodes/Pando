@@ -9,6 +9,7 @@ exports.run = (client, msg, [code]) => {
       depth: 0
     });
     if (output.includes(client.token)) output = output.replace(client.token, 'Not for your eyes');
+    if (output.includes(client.token)) output = output.replace(msg.client.token, 'Not for your eyes');
     if (output.length > 1990) console.log(output), output = 'Too long to be printed (content got console logged)';
 
     return msg.channel.send(output, {code:'js'});
@@ -17,6 +18,7 @@ exports.run = (client, msg, [code]) => {
     err = err.toString();
 
     if (err.includes(client.token)) err = err.replace(client.token, 'Not for your eyes');
+    if (output.includes(client.token)) output = output.replace(msg.client.token, 'Not for your eyes');
 
     return msg.channel.send(err, {code:'js'});
   });
