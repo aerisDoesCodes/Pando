@@ -5,14 +5,14 @@ require("moment-duration-format");
 exports.run = (client, msg) => {
   msg.channel.sendCode("asciidoc", `= STATISTICS =
 
-  • Name       :: ${msg.author.username}
-  • Discrim    :: #${msg.author.discriminator}
-  • ID         :: ${msg.author.id}
-  • Joined at  :: ${moment(msg.author.joinedAt).format('ddd MMM Do YYYY')}
-  • Status     :: ${msg.author.presence.status}
-  • Game       :: ${msg.author.presence.game === null ? "No Game" : msg.author.presence.game.name}
+  • Name           :: ${msg.author.username}
+  • Discrim        :: #${msg.author.discriminator}
+  • ID             :: ${msg.author.id}
+  • Joined at      :: ${moment(msg.author.joinedAt).format('ddd MMM Do YYYY')}
+  • Status         :: ${msg.author.presence.status}
+  • Game           :: ${msg.author.presence.game === null ? "No Game" : msg.author.presence.game.name}
   • Joined Discord :: ${moment(msg.author.createdAt).format('ddd MMM Do YYYY')}
-  • Roles      :: ${msg.member.roles.filter(r => {return r.name != '@everyone'}).map(r => r.name).join(', ')}`);
+  • Roles          :: ${msg.member.roles.filter(r => {return r.name != '@everyone'}).map(r => r.name).join(', ')}`);
 };
 
 exports.conf = {
