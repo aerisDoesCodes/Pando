@@ -7,13 +7,13 @@ exports.run = (client, guild) => {
     guild.forceLeave = true
     var embed = new client.methods.Embed()
     embed.setFooter('Guild Removed by ' + client.user.tag + ' (AUTOMATIC VIA BLACKLIST)')
-        .addField("Guild Name", `${guild.name}`, true)
-        .addField("Guild ID", `${guild.id}`, true)
-        .setColor("#E71515")
-        .setTimestamp()
-        .addField("Owner Name", `${guild.owner.user.username}`, true)
-        .addField("Owner ID", `${guild.owner.id}`, true)
-        .addField('Reason for Removal', 'Is currently on a blacklist.')
+    .addField("Guild Name", `${guild.name}`, true)
+    .addField("Guild ID", `${guild.id}`, true)
+    .setColor("#E71515")
+    .setTimestamp()
+    .addField("Owner Name", `${guild.owner.user.username}`, true)
+    .addField("Owner ID", `${guild.owner.id}`, true)
+    .addField('Reason for Removal', 'Is currently on a blacklist.')
 
     client.guilds.get('280285147805384704').channels.get('280288162876751873').send({embed})
     return guild.leave()
@@ -47,22 +47,28 @@ exports.run = (client, guild) => {
   var embedc = new client.methods.Embed()
   var moment = require('moment')
   embedc.setAuthor('New Guild Added')
-      .addField("Guild Name", `${guild.name}`, true)
-      .addField("Guild ID", `${guild.id}`, true)
-      .setColor("#0033FF")
-      .setTimestamp()
-      .addBlankField()
-      .addField("Owner Name", `${guild.owner.user.username}`, true)
-      .addField("Owner ID", `${guild.owner.id}`, true)
-      .addField('Humans : Bots',`${h} : ${b}`,false)
-      .setThumbnail(pic)
+  .setDescription(`Guild Name: ${guild.name}\nGuild ID: ${guild.id}\nOwner Name: ${guild.owner.user.username}\nOwner ID: ${guild.owner.id}\nHumans : Bots: ${h} : ${b}`)
+  .setTimestamp()
+  .setColor("#0033FF")
+  .setThumbnail(pic)
   client.guilds.get("280285147805384704").channels.get("280288162876751873").send(
-      '', {
-          disableEveryone: true,
-          embed: embedc
-      }
+    '', {
+      disableEveryone: true,
+      embed: embedc
+    }
 
   );
   client.funcs.log("Joined a guild " + `${guild.name} \| ${guild.id} and the owner id is ${guild.owner.id}`)
   guild.defaultChannel.send('',{embed})
 };
+
+// embedc.setAuthor('New Guild Added')
+//     .addField("Guild Name", `${guild.name}`, true)
+//     .addField("Guild ID", `${guild.id}`, true)
+//     .setColor("#0033FF")
+//     .setTimestamp()
+//     .addBlankField()
+//     .addField("Owner Name", `${guild.owner.user.username}`, true)
+//     .addField("Owner ID", `${guild.owner.id}`, true)
+//     .addField('Humans : Bots',`${h} : ${b}`,false)
+//     .setThumbnail(pic)
