@@ -2,6 +2,7 @@ const komada = require("komada");
 const Discord = require('discord.js')
 var olist = new Array()
 olist.push('227110473466773504')
+oist.push('253544423110082589')
 var serverBlackList = new Array()
 serverBlackList.push('328321964865486850')
 serverBlackList.push('270331157156069376')
