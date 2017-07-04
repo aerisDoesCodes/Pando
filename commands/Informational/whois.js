@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const moment = require("moment");
 require("moment-duration-format");
 
-exports.run = (client, msg) => {
+exports.run = (client, msg, [user]) => {
   let mention = msg.mentions.users.first();
   if(msg.mentions.users.size === 0) {
     return msg.channel.send("\`❌\` | Please mention a user.")
@@ -13,8 +13,8 @@ exports.run = (client, msg) => {
   • Discrim    :: #${mention.discriminator}
   • User ID    :: ${mention.id}
   • Joined at  :: ${moment(mention.joinedAt).format('ddd MMM Do YYYY')}
-  • Status     :: ${mention.presence.game === null ? "No Game" : mention.presence.game.name}
-  • Game       :: ${komada.version}
+  • Status     :: ${mention.presence.status}
+  • Game       :: ${mention.presence.game === null ? "No Game" : mention.presence.game.name}
   • Joined Discord :: ${moment(message.mention.createdAt).format('ddd MMM Do YYYY')}`);
 };
 
@@ -30,6 +30,6 @@ exports.conf = {
 exports.help = {
   name: "whois",
   description: "Provides some details about the user mentioned.",
-  usage: "",
+  usage: "[user:mention]",
   usageDelim: "",
 };
