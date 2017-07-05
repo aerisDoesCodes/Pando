@@ -2,7 +2,7 @@ exports.run = async (client, msg, args) => {
   let m;
   let roles = msg.guild.roles.array().join(' | ');
   let roles1 = msg.guild.roles.map(r => r.name).join(', ')
-  var embed = new Discord.RichEmbed();
+  var embed = new client.methods.Embed()
   switch (type) {
     if (!args) return msg.channel.send("Please specify an argument.\n`color` or `words`.")
     case "color":
@@ -42,6 +42,6 @@ exports.conf = {
 exports.help = {
   name: "roles",
   description: "Show all the roles on the server.",
-  usage: "", // What's should be in here? OwO
+  usage: "<color|words> [role:role|guild:guild]", // What's should be in here? OwO
   usageDelim: " ",
 };
