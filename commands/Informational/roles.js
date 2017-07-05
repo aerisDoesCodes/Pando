@@ -5,9 +5,6 @@ exports.run = async (client, msg, args) => {
   var embed = new client.methods.Embed()
   switch (type) {
     case "color":
-    if (!msg.guild.member(client.user).hasPermission("EMBED_LINKS")) {
-      return msg.channel.send("`ERROR:` I do not have permission to send Embed.");
-    }
     embed.setAuthor(`${msg.guild.name} guild roles`)
     .setDescription(roles)
     .setColor("#53A6F3")
