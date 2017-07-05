@@ -1,4 +1,4 @@
-exports.run = async (client, msg, args, [roles]) => {
+exports.run = async (client, msg, args) => {
   let m;
   let roles = msg.guild.roles.array().join(' | ');
   let roles1 = msg.guild.roles.map(r => r.name).join(', ')
@@ -42,6 +42,6 @@ exports.conf = {
 exports.help = {
   name: "roles",
   description: "Show all the roles on the server.",
-  usage: "<color|words> [role:role|guild:guild]", // What's should be in here? OwO
+  usage: "", // What's should be in here? OwO
   usageDelim: " ",
 };
