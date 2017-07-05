@@ -1,4 +1,4 @@
-exports.run = async (client, msg, args) => {
+exports.run = async (client, msg, args, [roles]) => {
   let m;
   let roles = msg.guild.roles.array().join(' | ');
   let roles1 = msg.guild.roles.map(r => r.name).join(', ')
