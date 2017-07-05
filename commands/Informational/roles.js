@@ -4,7 +4,6 @@ exports.run = async (client, msg, args) => {
   let roles1 = msg.guild.roles.map(r => r.name).join(', ')
   var embed = new client.methods.Embed()
   switch (type) {
-    if (!args) return msg.channel.send("Please specify an argument.\n`color` or `words`.")
     case "color":
     if (!msg.guild.member(client.user).hasPermission("EMBED_LINKS")) {
       return msg.channel.send("`ERROR:` I do not have permission to send Embed.");
