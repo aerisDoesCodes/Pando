@@ -10,6 +10,7 @@ exports.run = async (client, msg, [type]) => {
     .setDescription(emojis)
     .setColor("#53A6F3")
     .setFooter(`There are ${msg.guild.emojis.filter(r => r.name).size} custom emojis in ${msg.guild.name}`)
+    .setTimestamp()
     msg.channel.send({embed}).catch((err) => {msg.channel.send(`:warning: **An error occurred.**\n${err}`); console.log(err)});
     break;
     case "noembed":
