@@ -1,5 +1,5 @@
 exports.run = async (client, msg, [type]) => {
-  let emojis = msg.channel.guild.emojis.map(e => `${e.name}`).join(' ')
+  let emojis = msg.channel.guild.emojis.map(e => `:${e.name}:`).join(', ')
   var embed = new client.methods.Embed()
   if (!msg.guild.member(client.user).hasPermission("EMBED_LINKS")) {
     return msg.channel.send("`ERROR:` I do not have permission to send Embed, contact administrator to get permission to send embed.");
