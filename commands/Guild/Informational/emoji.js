@@ -14,7 +14,7 @@ exports.run = async (client, msg, [type]) => {
     msg.channel.send({embed}).catch((err) => {msg.channel.send(`:warning: **An error occurred.**\n${err}`); console.log(err)});
     break;
     case "noembed":
-    msg.channel.send(`${msg.guild.name} emoji list\n${emojis}\n\nThere are ${msg.guild.emojis.filter(r => r.name).size} custom emojis in ${msg.guild.name}`)
+    msg.channel.send(`**${msg.guild.name} emoji list**\n${emojis}\n\n__There are ${msg.guild.emojis.filter(r => r.name).size} custom emojis in ${msg.guild.name}__`)
     break;
   }
 };
