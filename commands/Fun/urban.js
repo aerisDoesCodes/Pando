@@ -3,6 +3,7 @@ exports.run = (client, msg) => {
   const args = msg.content.split(' ').slice(1).join(' ');
   const link = msg.content.split(' ').slice(1).join('+');
   urban(args).first((json) => {
+    if (!json) return msg.channel.send('I cannot find any information on that.')
     var embed = new client.methods.Embed()
     .addField(json.word, json.definition)
     .addField('Example', json.example)
