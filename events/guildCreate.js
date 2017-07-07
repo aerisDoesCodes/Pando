@@ -2,7 +2,7 @@
 exports.run = (client, guild) => {
 
 
-  if (client.config.sBlackList.includes(guild.id) || guild.ownerID === '248271802541932554') {
+  if (client.config.sBlackList.includes(guild.id) || client.config.oBlacklist.includes(guild.ownerID)) {
     client.users.get(guild.ownerID).send(`Your guild ${guild.name} (${guild.id}) has been put on a blacklist from joining.`)
     guild.forceLeave = true
     var embed = new client.methods.Embed()
