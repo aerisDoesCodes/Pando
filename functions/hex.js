@@ -1,4 +1,5 @@
-module.exports = () => {
+module.exports = (default) => {
+  if (default) return '#ffff00'
   var length = 6;
   var chars = '0123456789ABCDEF';
   var hex = '#';
