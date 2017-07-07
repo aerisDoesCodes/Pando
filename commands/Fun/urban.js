@@ -6,7 +6,7 @@ exports.run = (client, msg) => {
     var embed = new client.methods.Embed()
     .addField(json.word, json.definition)
     .addField('Example', json.example)
-    .addField(`Learn more abour ${json.word}`, `[Click Here to go to Urban Dictionary](http://www.urbandictionary.com/define.php?term=${link})`)
+    .addField(`Learn more about ${json.word}`, `[Click Here to go to Urban Dictionary](http://www.urbandictionary.com/define.php?term=${link})`)
     .setColor(client.funcs.hex(true))
     return msg.channel.send({embed})
   })
