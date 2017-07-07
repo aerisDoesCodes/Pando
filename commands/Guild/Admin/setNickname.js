@@ -1,4 +1,3 @@
-send
 exports.run = (client, msg, force) => {
 
   var color = client.funcs.hex()
