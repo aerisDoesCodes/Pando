@@ -20,5 +20,6 @@ komada.start({
   aowners: olist,
   clientOptions: {
     fetchAllMembers: true,
+    disabledEvents: ['guildDelete']
   },
 });
