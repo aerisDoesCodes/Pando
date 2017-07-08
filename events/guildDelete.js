@@ -5,11 +5,9 @@ exports.run = (client, guild) => {
   embed.setAuthor('Guild Left / Kicked')
   .addField('Name', guild.name)
   .addField('ID', guild.id)
-  .addField('Owner', `${client.users.get(guild.ownerid).tag} (${client.users.get(guild.ownerid).id})`)
-  .addField('Humans to Bots', `${h} humans | ${b} bots`)
+  .addField('Owner', `${client.users.get(guild.ownerID).tag} (${client.users.get(guild.ownerID).id})`)
   .setTimestamp()
   .setColor("#0033FF")
-  .setThumbnail(pic)
   .setTimestamp()
   .setColor("#E71515")
   client.guilds.get("280285147805384704").channels.get("280288162876751873").send(
