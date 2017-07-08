@@ -1,14 +1,14 @@
 exports.run = (client, guild) => {
   if (guild.forceLeave) return
   var embed = new client.methods.Embed()
+  var pic = guild.iconURL ? guild.iconURL : client.users.get(guild.ownerID).avatarURL : client.user.avatarURL
   var moment = require('moment')
   embed.setAuthor('Guild Left / Kicked')
   .addField('Name', guild.name)
   .addField('ID', guild.id)
   .addField('Owner', `${client.users.get(guild.ownerID).tag} (${client.users.get(guild.ownerID).id})`)
   .setTimestamp()
-  .setColor("#0033FF")
-  .setTimestamp()
+  .setThumbnail(pic)
   .setColor("#E71515")
   client.guilds.get("280285147805384704").channels.get("280288162876751873").send(
     '', {
