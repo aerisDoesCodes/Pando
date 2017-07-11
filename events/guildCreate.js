@@ -12,7 +12,7 @@ exports.run = (client, guild) => {
     .setColor("#E71515")
     .setTimestamp()
     .addField("Owner Name", `${guild.owner.user.username}`, true)
-    .addField("Owner ID", `${guild.owner.id}`, true)
+    .addField("Owner ID", `${guild.ownerID}`, true)
     .addField('Reason for Removal', 'Is currently on a blacklist.')
 
     client.guilds.get('280285147805384704').channels.get('280288162876751873').send({embed})
@@ -50,7 +50,7 @@ exports.run = (client, guild) => {
   embedc.setAuthor('New Guild Added')
   .addField('Name', guild.name)
   .addField('ID', guild.id)
-  .addField('Owner', `${client.users.get(guild.ownerid).tag} (${client.users.get(guild.ownerid).id})`)
+  .addField('Owner', `${client.users.get(guild.ownerID).tag} (${guild.ownerID})`)
   .addField('Humans to Bots', `${h} humans | ${b} bots`)
   .setTimestamp()
   .setColor("#0033FF")
@@ -62,7 +62,7 @@ exports.run = (client, guild) => {
     }
 
   );
-  client.funcs.log("Joined a guild " + `${guild.name} \| ${guild.id} and the owner id is ${guild.owner.id}`)
+  client.funcs.log("Joined a guild " + `${guild.name} \| ${guild.id} and the owner id is ${guild.ownerID}`)
   guild.defaultChannel.send('',{embed})
 };
 
