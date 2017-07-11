@@ -35,7 +35,8 @@ exports.run = (client, guild) => {
   if (!guild.available) return;
 
 
-  var pic = guild.iconURL ? guild.iconURL : client.users.get(guild.ownerID).avatarURL : client.user.avatarURL
+  var pic = guild.iconURL ? guild.iconURL : client.users.get(guild.ownerID).avatarURL
+  if (!pic) pic = client.user.avatarURL
   client.configuration.insert(client, guild);
   const conf = client.guildConfs.get(guild.id);
   var embed = new client.methods.Embed()

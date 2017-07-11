@@ -1,7 +1,8 @@
 exports.run = (client, guild) => {
   if (guild.forceLeave) return
   var embed = new client.methods.Embed()
-  var pic = guild.iconURL ? guild.iconURL : client.users.get(guild.ownerID).avatarURL : client.user.avatarURL
+  var pic = guild.iconURL ? guild.iconURL : client.users.get(guild.ownerID).avatarURL
+  if (!pic) pic = client.user.avatarURL
   var moment = require('moment')
   embed.setAuthor('Guild Left / Kicked')
   .addField('Name', guild.name)
