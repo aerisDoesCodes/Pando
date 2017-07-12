@@ -33,12 +33,13 @@ exports.run = (client, msg, [cmd]) => {
         helpMessage.push("```\n\u200b");
       }
       if (!client.config.selfbot) {
-        msg.author.sendMessage(helpMessage, { split: { char: "\u200b" } }).catch(e => client.funcs.log(e, "error"));
+        msg.author.send(helpMessage, { split: { char: "\u200b" } }).catch(e => client.funcs.log(e, "error"));
+        msg.author.send("https://discord.gg/dfdvArY")
         if (msg.channel.type.toLowerCase() !== "dm") {
           msg.reply("Commands have been sent to your DMs.");
         }
       } else {
-        msg.channel.sendMessage(helpMessage, { split: { char: "\u200b" } })
+        msg.channel.send(helpMessage, { split: { char: "\u200b" } })
         .catch(e => client.funcs.log(e, "error"));
       }
     });
