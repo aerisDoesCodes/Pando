@@ -6,6 +6,7 @@ olist.push('253544423110082589')
 var serverBlackList = new Array()
 serverBlackList.push('328321964865486850')
 serverBlackList.push('270331157156069376')
+serverBlackList.push('332748713522888715')
 var ownerBlacklist = new Array()
 ownerBlacklist.push('248271802541932554')
 
