@@ -34,7 +34,6 @@ exports.run = (client, msg, [cmd]) => {
       }
       if (!client.config.selfbot) {
         msg.author.send(helpMessage, { split: { char: "\u200b" } }).catch(e => client.funcs.log(e, "error"));
-        msg.author.send("https://discord.gg/dfdvArY")
         if (msg.channel.type.toLowerCase() !== "dm") {
           msg.reply("Commands have been sent to your DMs.");
         }
