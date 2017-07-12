@@ -1,4 +1,4 @@
-exports.run = (client, msg, force) => {
+exports.run = (client, msg, [nickname, force]) => {
 
   var color = client.funcs.hex()
   var cAbort = new client.methods.Embed()
