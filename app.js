@@ -7,6 +7,9 @@ var serverBlackList = new Array()
 serverBlackList.push('328321964865486850')
 serverBlackList.push('270331157156069376')
 serverBlackList.push('332748713522888715')
+
+var noAnnSBL = new Array()
+noAnnSBL.push('332748713522888715')
 var ownerBlacklist = new Array()
 ownerBlacklist.push('248271802541932554')
 
@@ -18,6 +21,7 @@ komada.start({
   prefix: "io.",
   sBlackList: serverBlackList,
   oBlacklist: ownerBlacklist,
+  nannSBL: noAnnSBL,
   aowners: olist,
   clientOptions: {
     fetchAllMembers: true,
