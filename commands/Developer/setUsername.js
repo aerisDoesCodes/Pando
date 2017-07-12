@@ -46,7 +46,7 @@ exports.run = (client, msg, [username, force]) => {
       }
     })
   }
-}
+};
 
 exports.conf = {
   enabled: true,
@@ -55,7 +55,7 @@ exports.conf = {
   permLevel: 10,
   botPerms: [],
   requiredFuncs: [],
-}
+};
 
 exports.help = {
   name: "setUsername",
@@ -63,4 +63,10 @@ exports.help = {
   usage: "<username:str> [force:boolean]",
   usageDelim: " ",
   category: ""
-}
+};
+
+/*
+Example:
+Me: io.su Test
+Bot: Type io.ryes or io.rno! (Not working)
+*/
