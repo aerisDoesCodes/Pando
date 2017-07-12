@@ -23,6 +23,6 @@ exports.conf = {
 exports.help = {
   name: "prune",
   description: "Prune a number of message on the current channel.",
-  usage: "<int:int>", /* 🤔 I think I am right */
+  usage: "<number:int>", /* 🤔 I think I am right */
   usageDelim: " ",
 };
