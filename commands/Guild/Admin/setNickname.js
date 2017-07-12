@@ -61,7 +61,7 @@ exports.conf = {
 
 exports.help = {
   name: "setNickname",
-  description: "Changes the bots nickname",
+  description: "Changes the bot\'s nickname",
   usage: "<nickname:str> [force:boolean]",
   usageDelim: " ",
   category: ""
