@@ -48,7 +48,7 @@ exports.run = (client, msg, force) => {
       }
     })
   }
-}
+};
 
 exports.conf = {
   enabled: true,
@@ -57,30 +57,12 @@ exports.conf = {
   permLevel: 2,
   botPerms: [],
   requiredFuncs: [],
-}
+};
 
 exports.help = {
   name: "setNickname",
   description: "Changes the bots nickname",
-  usage: "<nickname:str> [force:boolean]", // Check this out also (Leave some comments here so I know what to do next time)
+  usage: "<nickname:str> [force:boolean]",
   usageDelim: " ",
   category: ""
-}
-
-/*  Please leave some message on what I did wrong so next time I know what to do. Thanks ^-^ */
-
-
-// var user = msg.mentions.users.first();
-// var nickname = msg.content.split(' ').slice(2).join(' ');
-//  var botnick = msg.content.split(' ').slice(1).join(' ');
-// let role = msg.member.guild.roles.find('name', 'Bot Commander');
-//     if (!msg.member.roles.exists('name', 'Bot Commander'))
-//     if (msg.author.id !== "241216483592634368")
-//     return msg.channel.send(`\`❌\` | Only people with the Bot Commander role, can execute this command.`)
-//  if (!user) {
-//      msg.guild.member(this.client.user).setNickname(botnick);
-//      msg.channel.send(`${this.client.user.username}'s Name has been changed by ${msg.author}`)
-//  } else {
-//  msg.guild.member(user).setNickname(nickname);
-//  msg.channel.send("success")
-// }
+};
