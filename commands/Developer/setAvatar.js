@@ -13,7 +13,7 @@ exports.run = (client, msg, [avatarLink, force]) => {
   .addField('Times Up', 'You didn\'t answer in time')
   .setColor(color)
 
-  
+
   var requestR = new client.methods.Embed()
   .addField('Change Avatar?', 'Type io.ryes or io.rno!')
   .setColor(color)
@@ -45,16 +45,6 @@ exports.run = (client, msg, [avatarLink, force]) => {
       }
     })
   }
-
-
-
-
-
-
-
-
-
-
 }
 
 exports.conf = {

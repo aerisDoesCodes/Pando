@@ -18,7 +18,7 @@ exports.run = (client, msg, [force]) => {
   .addField('Change username?', 'Type io.ryes or io.rno!')
   .setColor(color)
 
-  var username = msg.content.split(' ').slice(2).join(' ');
+  var username = msg.content.split(' ').slice(1).join(' ');
 
   if (force) {
     msg.channel.send({embed: cSuccess})
