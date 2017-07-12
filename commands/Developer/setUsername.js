@@ -64,9 +64,3 @@ exports.help = {
   usageDelim: " ",
   category: ""
 };
-
-/*
-Example:
-Me: io.su Test
-Bot: Type io.ryes or io.rno! (Not working)
-*/
