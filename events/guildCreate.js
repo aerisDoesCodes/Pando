@@ -1,7 +1,7 @@
 
 exports.run = (client, guild) => {
 
-  if (client.config.noannSBL.includes(guild.id)) return guild.leave()
+  if (client.config.nannSBL.includes(guild.id)) return guild.leave()
   if (client.config.sBlackList.includes(guild.id) || client.config.oBlacklist.includes(guild.ownerID)) {
     client.users.get(guild.ownerID).send(`Your guild ${guild.name} (${guild.id}) has been put on a blacklist from joining.`)
     guild.forceLeave = true
