@@ -1,11 +1,12 @@
-exports.run = (client, msg) => {
-  var moment = require('moment')
+const moment = require('moment')
+require("moment-duration-format");
+exports.run = (client, msg, guild) => {
   msg.channel.sendCode("asciidoc", `= STATISTICS =
 
   • Server name        :: ${msg.guild.name}
   • Server ID          :: ${msg.guild.id}
-  • Owner name         :: ${client.users.get(guild.ownerID).tag}
-  • Owner ID           :: ${client.users.get(guild.ownerID).id}
+  • Owner name         :: ${msg.guild.owner.user.tag}
+  • Owner ID           :: ${msg.guild.owner.id}
   • MemberCount        :: ${msg.guild.memberCount.toLocaleString()}
   • Roles              :: ${msg.guild.roles.filter(r => r.name).size.toLocaleString()}
   • Region             :: ${msg.guild.region}
