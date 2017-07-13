@@ -1,5 +1,5 @@
 var Jimp = require('jimp')
-exports.run = (client, msg, [user]) => {
+exports.run = (client, msg) => {
   if (msg.mentions.users.size === 0) {
     const res = msg.channel.send(':gear: generating...')
     Jimp.read(msg.author.avatarURL, (err, avatar) => {
@@ -43,6 +43,6 @@ exports.conf = {
 exports.help = {
   name: "blur",
   description: "Blur avatar on user mentioned or your avatar.",
-  usage: "[user:mention]",
+  usage: "",
   usageDelim: "",
 };
