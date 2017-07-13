@@ -4,6 +4,9 @@ require("moment-duration-format");
 
 exports.run = (client, msg, [user]) => {
   let mention = msg.mentions.users.first();
+  if(msg.mentions.users.size === 0) {
+    return msg.channel.send("\`❌\` | Please mention a user.")
+  }
   msg.channel.sendCode("asciidoc", `= STATISTICS =
 
   • Name           :: ${mention.username}
