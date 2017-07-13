@@ -25,10 +25,14 @@ exports.run = (client, msg) => {
   .addField('Reason for Removal', reason)
   .setThumbnail(pic)
 
+  var gEmbed = new client.methods.Embed()
+  .addField('Leaveing Guild', 'Bot Developer has requested that I leave this server.')
+  .addField('Reason', reason)
+  .addField('Appeal / Discussion', `[Click Here](http://discord.gg/dfdvArY)`)
+  .setFooter(msg.author.tag, msg.author.avatarURL)
 
-
-  guild.defaultChannel.send('Bot developer has requested that I leave this server. \n'  + reason  + '\n-'+ msg.author.tag)
-  msg.delete()
+  guild.defaultChannel.send({embed: gEmbed})
+  msg.delete(30)
   channel.send('', {embed}).then(m => {
     guild.forceLeave = true
     guild.leave()
