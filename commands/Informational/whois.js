@@ -3,6 +3,7 @@ const moment = require("moment");
 require("moment-duration-format");
 
 exports.run = (client, msg, [user]) => {
+  let mention = msg.mentions.users.first();
   msg.channel.sendCode("asciidoc", `= STATISTICS =
 
   • Name           :: ${mention.username}
