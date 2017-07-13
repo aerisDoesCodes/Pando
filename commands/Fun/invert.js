@@ -44,7 +44,7 @@ if (msg.mentions.users.size === 0) {
 
   exports.help = {
     name: "invert",
-    description: "Invert avatar on user mentioned or your avatar.",
+    description: "Invert avatar on user mentioned , or if no mention the sender",
     usage: "",
     usageDelim: "",
   };

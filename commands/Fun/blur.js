@@ -42,7 +42,7 @@ exports.conf = {
 
 exports.help = {
   name: "blur",
-  description: "Blur avatar on user mentioned or your avatar.",
+  description: "Blur avatar on user mentioned, or if no mention the sender",
   usage: "",
   usageDelim: "",
 };
