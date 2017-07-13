@@ -10,6 +10,7 @@ serverBlackList.push('332748713522888715')
 
 var noAnnSBL = new Array()
 noAnnSBL.push('332748713522888715')
+noAnnSBL.push('326162975528452097')
 var ownerBlacklist = new Array()
 ownerBlacklist.push('248271802541932554')
 
