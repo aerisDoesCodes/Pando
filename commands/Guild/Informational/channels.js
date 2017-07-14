@@ -25,7 +25,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: "channels",
+  name: "channel",
   description: "Show all the channels on the server.",
   usage: "<list:str>",
   usageDelim: "",
