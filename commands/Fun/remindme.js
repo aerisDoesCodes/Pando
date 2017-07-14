@@ -1,5 +1,6 @@
 const Sherlock = require('sherlockjs');
 const moment = require('moment');
+let embed = new client.methods.Embed()
 
 exports.run = async (client, msg, [action, value]) => {
   const s = Sherlock.parse(msg.content);
