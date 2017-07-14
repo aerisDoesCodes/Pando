@@ -6,7 +6,7 @@ exports.run = (client, msg, [nickname, force]) => {
   .setColor(color)
 
   var cSuccess = new client.methods.Embed()
-  .addField('Alright', 'The nickname has been channge.')
+  .addField('Alright', 'The nickname has been change.')
   .setColor(color)
 
   var cTime = new client.methods.Embed()
