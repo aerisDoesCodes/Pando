@@ -1,7 +1,7 @@
 const Sherlock = require('sherlockjs');
 const moment = require('moment');
 
-exports.run = async (client, msg, [action]) => {
+exports.run = async (client, msg) => {
   let embed = new client.methods.Embed()
   const s = Sherlock.parse(msg.content);
   const relative = s.startDate.getTime() - Date.now();
@@ -28,6 +28,6 @@ exports.conf = {
 exports.help = {
   name: "remindme",
   description: "Set something to remind.",
-  usage: "<seconds|minutes|hours> [str:str]",
-  usageDelim: "|",
+  usage: "", // I don't know what should be in here
+  usageDelim: "",
 };
