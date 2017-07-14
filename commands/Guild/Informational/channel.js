@@ -17,7 +17,7 @@ exports.run = async (client, msg, [type]) => {
 
 exports.conf = {
   enabled: true,
-  runIn: ["text"],
+  runIn: ["text"], 
   aliases: ["c"],
   permLevel: 0,
   botPerms: [],
