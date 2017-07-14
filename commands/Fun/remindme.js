@@ -12,7 +12,7 @@ exports.run = async (client, msg, [action, value]) => {
     embed.setAuthor("REMINDER")
     .setDescription(final)
     .setTimestamp()
-    msg.author.send('', ${embed}).catch(() => msg.channel.send(`${msg.author} ${final}`));
+    msg.author.send('', {embed}).catch(() => msg.channel.send(`${msg.author} ${final}`));
   }, relative);
 };
 
