@@ -1,8 +1,8 @@
 const Sherlock = require('sherlockjs');
 const moment = require('moment');
-let embed = new client.methods.Embed()
 
-exports.run = (client, msg, [action]) => {
+exports.run = async (client, msg, [action]) => {
+  let embed = new client.methods.Embed()
   const s = Sherlock.parse(msg.content);
   const relative = s.startDate.getTime() - Date.now();
   s.eventTitle = s.eventTitle.replace(/^me to ?|^me ?|^to ?/, '');
@@ -12,7 +12,7 @@ exports.run = (client, msg, [action]) => {
     embed.setAuthor("REMINDER")
     .setDescription(final)
     .setTimestamp()
-    msg.author.send('', {embed}).catch(() => msg.channel.send(`${msg.author} ${final}`));
+    msg.author.send({embed})
   }, relative);
 };
 
