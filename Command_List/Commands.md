@@ -75,6 +75,7 @@
 <p><strong>Informational</strong></p>
 <ul>
   <li><code class="highlighter-rouge">io.emojis    :: Show all the custom emojis on the server.</code></li>
+  <li><code class="highlighter-rouge">io.channel     :: Show all the channels on the server.</code></li>
   <li><code class="highlighter-rouge">io.roles    :: Show all the roles on the server.</code></li>
   <li><code class="highlighter-rouge">io.serverinfo    :: Provides some details about the server.</code></li>
 </ul>
