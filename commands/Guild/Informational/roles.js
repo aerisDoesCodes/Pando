@@ -9,7 +9,7 @@ exports.run = async (client, msg, [type]) => {
     case "color":
     embed.setAuthor(`${msg.guild.name} Roles`)
     .setDescription(roles)
-    .setColor("#53A6F3")
+    .setColor(client.funcs.hex())
     .setFooter(`There are ${msg.guild.roles.filter(r => r.name).size} roles in ${msg.guild.name}`)
     msg.channel.send('', {embed}).catch((err) => {msg.channel.send(`:warning: **An error occurred.**\n${err}`); console.log(err)});
     break;
@@ -21,7 +21,7 @@ exports.run = async (client, msg, [type]) => {
     msg.channel.send('', {embed}).catch((err) => {msg.channel.send(`:warning: **An error occurred.**\n${err}`); console.log(err)});
     break;
   }
-  
+
 
 };
 
@@ -38,6 +38,6 @@ exports.conf = {
 exports.help = {
   name: "roles",
   description: "Show all the roles on the server.",
-  usage: "<color|words>", // What's should be in here? OwO
+  usage: "<color|words>",
   usageDelim: "|",
 };
