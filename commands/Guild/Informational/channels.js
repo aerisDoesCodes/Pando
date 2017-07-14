@@ -5,7 +5,7 @@ exports.run = async (client, msg, [type]) => {
     return msg.channel.send("`ERROR:` I do not have permission to send Embed, contact administrator to get permission to send embed.");
   }
   switch (type) {
-    case "list"
+    case "list":
     embed.setAuthor(`${msg.guild.name} channels`)
     .setDescription(`#${channels}`)
     .setColor(client.funcs.hex())
@@ -18,7 +18,7 @@ exports.run = async (client, msg, [type]) => {
 exports.conf = {
   enabled: true,
   runIn: ["text"],
-  aliases: ["r"],
+  aliases: ["c"],
   permLevel: 0,
   botPerms: [],
   requiredFuncs: [],
