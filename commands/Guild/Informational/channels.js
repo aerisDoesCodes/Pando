@@ -6,7 +6,7 @@ exports.run = async (client, msg, [type]) => {
   }
   switch (type) {
     case "list"
-    .setAuthor(`${msg.guild.name} channels`)
+    embed.setAuthor(`${msg.guild.name} channels`)
     .setDescription(`#${channels}`)
     .setColor(client.funcs.hex())
     .setFooter(`There are ${msg.guild.channels.map(r => r.name).size} channels in ${msg.guild.name}`)
