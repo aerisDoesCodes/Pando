@@ -9,7 +9,7 @@ exports.run = async (client, msg, [type]) => {
     embed.setAuthor(`${msg.guild.name} channels`)
     .setDescription(channels)
     .setColor(client.funcs.hex())
-    .setFooter(`There are ${msg.guild.channels.map(r => r.name).size} channels in ${msg.guild.name}`)
+    .setFooter(`There are ${msg.guild.channels.filter(r => r.name).size} channels in ${msg.guild.name}`)
     msg.channel.send('', {embed}).catch((err) => {msg.channel.send(`:warning: **An error occurred.**\n${err}`); console.log(err)});
     break;
   }
