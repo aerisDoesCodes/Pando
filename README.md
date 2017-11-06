@@ -6,7 +6,7 @@
 
 # Join the community!
 
-Aeris, Chris, Terry is in continuous development, and it’s supported by an active community which produces new content for everyone to enjoy. New features are constantly added. Stay tuned by [joining the official server](https://discord.gg/dfdvArY)!
+Aeris, Chris, Terry is in continuous development, and it’s supported by an active community which produces new content for everyone to enjoy. New features are constantly added. Stay tuned by [joining the official server](https://discord.gg/85DJg6M)!
 
 Undergoing Constant Development.
 # License
